@@ -23,3 +23,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .claude/
+
+# large 3D assets (>50MB) — serve via LFS or external CDN
+*.glb
+*.gltf
