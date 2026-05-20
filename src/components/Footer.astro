@@ -1,1 +1,337 @@
-<section class="h-screen w-full"></section>
+---
+import Form from "./helpers/Form.jsx";
+import wordmarkSrc from "../assets/footer-wordmark.svg?url";
+import arrowSrc from "../assets/icons/right_up.svg?url";
+---
+
+<footer class="footer" id="contact" data-navbar-dark>
+  <!-- ── Headline ── -->
+  <div class="footer__headline-wrap">
+    <p class="footer__headline">
+      <span class="footer__headline-solid">Let's </span><br />
+      <span class="footer__headline-solid">beg</span><span
+        class="footer__headline-muted">in a </span><em
+        class="footer__headline-italic">dialogue.</em>
+    </p>
+  </div>
+
+  <!-- ── Main row: channels + form ── -->
+  <div class="footer__divider"></div>
+  <div class="footer__main">
+    <!-- LEFT: channels -->
+    <div class="footer__channels">
+      <p class="footer__section-label">CHANNELS</p>
+      <ul class="footer__channel-list">
+        <li class="footer__channel-item">
+          <span class="footer__channel-type">EMAIL</span>
+          <a href="mailto:borsogastudio@gmail.com" class="footer__channel-value"
+            >borsogastudio@gmail.com</a
+          >
+        </li>
+        <li class="footer__channel-item">
+          <span class="footer__channel-type">DIRECT</span>
+          <a href="tel:+17868524847" class="footer__channel-value">786-852-4847</a>
+        </li>
+        <li class="footer__channel-item footer__channel-item--arrow">
+          <span class="footer__channel-type">WHATS APP</span>
+          <a
+            href="https://wa.me/17868524847"
+            target="_blank"
+            rel="noopener"
+            class="footer__channel-arrow"
+            aria-label="WhatsApp"
+          >
+            <img src={arrowSrc} alt="" width="32" height="32" />
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: contact form -->
+    <div class="footer__form-col">
+      <p class="footer__section-label footer__section-label--right">CONTACT US</p>
+      <Form client:load />
+    </div>
+  </div>
+
+  <!-- ── Elsewhere (social) ── -->
+  <div class="footer__divider"></div>
+  <div class="footer__social">
+    <p class="footer__section-label">ELSEWHERE</p>
+    <ul class="footer__social-list">
+      <li>
+        <a
+          href="https://instagram.com/borsogastudio"
+          target="_blank"
+          rel="noopener"
+          class="footer__social-link"
+        >
+          INSTAGRAM
+          <img src={arrowSrc} alt="" class="footer__social-arrow" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://linkedin.com/company/borsoga"
+          target="_blank"
+          rel="noopener"
+          class="footer__social-link"
+        >
+          LINKEDIN
+          <img src={arrowSrc} alt="" class="footer__social-arrow" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://facebook.com/borsogastudio"
+          target="_blank"
+          rel="noopener"
+          class="footer__social-link"
+        >
+          FACEBOOK
+          <img src={arrowSrc} alt="" class="footer__social-arrow" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ── Bottom bar ── -->
+  <div class="footer__divider"></div>
+  <div class="footer__bottom">
+    <a href="/privacy" class="footer__bottom-link">PRIVACY TERMS</a>
+    <span class="footer__bottom-copy">EST. 2024 BORSOGA®MIAMI / GLOBAL</span>
+  </div>
+
+  <!-- ── Wordmark ── -->
+  <div class="footer__wordmark">
+    <img src={wordmarkSrc} alt="BORSOGA" class="footer__wordmark-img" />
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    padding: 0 1.04rem;
+    overflow: hidden;
+  }
+
+  /* ── Headline ── */
+  .footer__headline-wrap {
+    padding: 3rem 0 2.5rem;
+  }
+  .footer__headline {
+    margin: 0;
+    font-size: clamp(3rem, 10vw, 12.5rem);
+    font-weight: 600;
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+  }
+  .footer__headline-solid {
+    color: #fff;
+  }
+  .footer__headline-muted {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .footer__headline-italic {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-weight: 200;
+  }
+
+  /* ── Divider ── */
+  .footer__divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0;
+  }
+
+  /* ── Section label ── */
+  .footer__section-label {
+    margin: 0 0 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.12em;
+  }
+  .footer__section-label--right {
+    margin-bottom: 2rem;
+  }
+
+  /* ── Main row ── */
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+  }
+
+  /* ── Channels ── */
+  .footer__channel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__channel-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 1rem;
+  }
+  .footer__channel-type {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    min-width: 5rem;
+  }
+  .footer__channel-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .footer__channel-value:hover {
+    opacity: 0.6;
+  }
+  .footer__channel-arrow {
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .footer__channel-arrow:hover {
+    opacity: 1;
+  }
+  .footer__channel-arrow img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  /* ── Form col ── */
+  .footer__form-col {
+    width: 100%;
+  }
+
+  /* ── Social ── */
+  .footer__social {
+    padding: 2rem 0;
+  }
+  .footer__social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .footer__social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .footer__social-link:hover {
+    opacity: 0.6;
+  }
+  .footer__social-arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    /* apunta diagonal abajo-derecha como en Figma */
+    transform: rotate(90deg);
+  }
+
+  /* ── Bottom bar ── */
+  .footer__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+  }
+  .footer__bottom-link,
+  .footer__bottom-copy {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .footer__bottom-link:hover {
+    color: #fff;
+  }
+
+  /* ── Wordmark ── */
+  .footer__wordmark {
+    padding: 1rem 0 0;
+  }
+  .footer__wordmark-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── DESKTOP (≥768px) ── */
+  @media (min-width: 768px) {
+    .footer__main {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .footer__social-list {
+      flex-direction: row;
+      gap: 3rem;
+    }
+
+    .footer__social-link {
+      font-size: 2rem;
+    }
+
+    .footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__channel-value {
+      font-size: 1rem;
+    }
+  }
+
+  /* ── WIDE (≥1280px) ── */
+  @media (min-width: 1280px) {
+    .footer__headline-wrap {
+      padding: 4rem 0 3rem;
+    }
+
+    .footer__main {
+      grid-template-columns: 2fr 3fr;
+      gap: 6rem;
+    }
+
+    .footer__social-link {
+      font-size: 2.5rem;
+    }
+
+    .footer__social-list {
+      gap: 5rem;
+    }
+
+    .footer__channel-value {
+      font-size: 1.2rem;
+    }
+  }
+</style>
